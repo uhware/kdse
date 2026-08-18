@@ -1,0 +1,7 @@
+# Build output
+/build/
+
+# Editor and operating-system files
+*.swp
+*~
+.DS_Store

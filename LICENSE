@@ -1,0 +1,18 @@
+Copyright (C) 2026 Mark Karaman
+
+This repository uses a dual-license structure:
+
+- Source code (C headers, sources, tests, examples, CLI, build files, and
+  source-code samples embedded in documentation): GNU Affero General Public
+  License v3.0 or later (AGPL-3.0-or-later). Full text: LICENSES/AGPL-3.0-or-later.txt
+
+- Markdown documentation and the supplied papers: Creative Commons
+  Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0).
+  Full text: LICENSES/CC-BY-SA-4.0.txt
+
+See LICENSE.md for the complete license map.
+
+U.S. Patent Pending — Application No. 64/131,240.
+
+Commercial licensing: licensing@uhware.com
+Security reports: security@uhware.com

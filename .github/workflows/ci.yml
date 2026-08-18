@@ -1,0 +1,25 @@
+# Copyright (C) 2026 Mark Karaman
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# This file is part of KDSE.
+
+name: C11
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        compiler: [gcc, clang]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test
+        env:
+          CC: ${{ matrix.compiler }}
+        run: make test
