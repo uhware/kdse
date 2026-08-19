@@ -5,6 +5,13 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Changelog
 
+## [1.0.1] — 2026-08-19
+
+Documentation-only alignment with the project description:
+
+- Describe the C11 code in this repository as a portable reference implementation, not as the definition of KDSE.
+- README title and lead paragraph updated; no code or API changes.
+
 ## [1.0] — 2026-08-18
 
 Initial public release.

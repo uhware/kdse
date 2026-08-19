@@ -4,12 +4,14 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 Source-code samples in this file: AGPL-3.0-or-later
 -->
 
-# KDSE — KDSE-8 and KDSE-16 for ISO C11
+# KDSE — KDSE-8 and KDSE-16
 
 **Status: Archived / read-only (v1.0)**  
 This repository is currently archived and read-only. Issues and pull requests are not accepted at this time.
 
-KDSE is a compact ISO C11 implementation of the **KDSE-8** and **KDSE-16** binary container forms of **K — Dendritic Structural Encoding**. Each width has its own checked admission library, separate trusted-input compute library, command-line interface, examples, and exhaustive tests.
+**K — Dendritic Structural Encoding (KDSE)** is a compact, delimiterless encoding of finite full binary trees (a special case of full *q*-ary dendrites), with Ordered canonical forms, terminal-depth profiles, and a deterministic threshold-and-loss operator. The mathematical specification is language-independent; see the companion papers.
+
+This repository provides a **portable ISO C11 reference implementation** of the **KDSE-8** and **KDSE-16** container forms—checked admission, trusted compute paths, CLI tools, examples, and exhaustive tests.
 
 | Container | Payload | Unassigned bit | Valid payload lengths |
 |-----------|---------|----------------|-----------------------|
