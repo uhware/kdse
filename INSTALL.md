@@ -6,7 +6,7 @@ Command and source-code samples: AGPL-3.0-or-later
 
 # Building and installing KDSE
 
-**Repository status:** Archived / read-only (v1.0). This document remains the build reference for the frozen 1.0 release.
+**Repository status:** Read-only (v1.0). This document remains the build reference for the frozen 1.0 release.
 
 ## Requirements
 

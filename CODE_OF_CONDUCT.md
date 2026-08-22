@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Code of conduct
 
-**Repository status:** Archived / read-only (v1.0). The expectations below apply whenever the project is open for participation.
+**Repository status:** Read-only (v1.0). The expectations below apply whenever the project is open for participation.
 
 Project participation requires technical candor, patience, and respect.
 Discuss ideas and evidence directly; do not attack, harass, threaten, or

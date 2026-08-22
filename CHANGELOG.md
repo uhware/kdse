@@ -5,6 +5,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Changelog
 
+## [1.0.2] - 2026-08-22
+
+Documentation-ony alignment with project state.
+
 ## [1.0.1] — 2026-08-19
 
 Documentation-only alignment with the project description:

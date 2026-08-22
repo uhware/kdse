@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Security Policy
 
-**Repository status:** Archived / read-only (v1.0).
+**Repository status:** Read-only (v1.0).
 
 ## Reporting a vulnerability
 
@@ -13,7 +13,7 @@ Please report security issues by email to:
 
 **security@uhware.com**
 
-Do not open public GitHub issues for security reports while this repository is archived.
+Please do not open public GitHub issues for security reports.
 
 Include a clear description of the issue, steps to reproduce where possible, and any known impact. We will acknowledge receipt as promptly as practical.
 

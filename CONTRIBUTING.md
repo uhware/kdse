@@ -6,7 +6,7 @@ Command samples: AGPL-3.0-or-later
 
 # Contributing
 
-**This repository is currently Archived / read-only (v1.0).**  
+**This repository is currently read-only (v1.0).**  
 Issues and pull requests are not accepted at this time.
 
 When the repository is re-opened for contributions, the following rules will apply:

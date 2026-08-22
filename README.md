@@ -6,8 +6,8 @@ Source-code samples in this file: AGPL-3.0-or-later
 
 # KDSE — KDSE-8 and KDSE-16
 
-**Status: Archived / read-only (v1.0)**  
-This repository is currently archived and read-only. Issues and pull requests are not accepted at this time.
+**Status: Public reference implementation. (v1.0.2)**
+Read-only for now; issues and pull requests are not accepted.
 
 **K — Dendritic Structural Encoding (KDSE)** is a compact, delimiterless encoding of finite full binary trees (a special case of full *q*-ary dendrites), with Ordered canonical forms, terminal-depth profiles, and a deterministic threshold-and-loss operator. The mathematical specification is language-independent; see the companion papers.
 
