@@ -4,14 +4,19 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 Source-code samples in this file: AGPL-3.0-or-later
 -->
 
-# KDSE — KDSE-8 and KDSE-16
+# KDSE — C11 and Python reference implementations
 
-**Status: Public reference implementation. (v1.0.2)**
+**Status: Public reference implementations. (v1.0.3)**
 Read-only for now; issues and pull requests are not accepted.
 
 **K — Dendritic Structural Encoding (KDSE)** is a compact, delimiterless encoding of finite full binary trees (a special case of full *q*-ary dendrites), with Ordered canonical forms, terminal-depth profiles, and a deterministic threshold-and-loss operator. The mathematical specification is language-independent; see the companion papers.
 
-This repository provides a **portable ISO C11 reference implementation** of the **KDSE-8** and **KDSE-16** container forms—checked admission, trusted compute paths, CLI tools, examples, and exhaustive tests.
+This repository provides a **portable ISO C11 reference implementation** and a
+corresponding **Python reference implementation** of the **KDSE-8** and
+**KDSE-16** container forms. Both provide checked admission, terminal-depth
+profiles, Ordered canonicalization, trusted compute paths, CLI tools, and
+exhaustive tests. Python additionally provides a bidirectional Structural KDSE
+adapter for Mermaid `flowchart LR` trees.
 
 | Container | Payload | Unassigned bit | Valid payload lengths |
 |-----------|---------|----------------|-----------------------|
@@ -41,7 +46,7 @@ Compact KDSE structure determines a deterministic jump schedule under the thresh
 
 *Payload `1110111` threshold sweep ( ℓ = 0%): jumps grow and move as \(T\) increases.*
 
-## Quick start
+## C quick start
 
 ```sh
 make
@@ -61,7 +66,32 @@ build/bin/kdse16 compute 0x7fff \
 
 The KDSE-8 compute command prints `3.00532625`; the KDSE-16 compute command prints `100`.
 
-## Two paths, four separate libraries
+## Python quick start
+
+Python 3.10 or later is required. From the repository root:
+
+```sh
+python -m pip install ./kdse-python
+KDSE_C_REFERENCE_ROOT=. \
+  python -m unittest discover -s kdse-python/tests -v
+
+kdse-py canonicalize 0b110
+kdse16-py profile 0x5555
+```
+
+`KDSE_C_REFERENCE_ROOT` enables direct compiled-C parity tests. Without it,
+the complete Python-only suite runs and the parity class skips cleanly.
+
+The compatibility module preserves the original adapter import surface:
+
+```python
+from kdse_mermaid import mermaid_to_kdse, kdse_to_mermaid
+```
+
+See [kdse-python/README.md](kdse-python/README.md) for the Python API, Mermaid
+contract, CLIs, packaging, and test instructions.
+
+## C implementation: two paths, four separate libraries
 
 | Library | Purpose | Input trust |
 |---------|---------|-------------|
@@ -91,6 +121,20 @@ if (kdse8_validate(kdse) == KDSE_STATUS_OK) {
 
 The C API expresses branch loss as a fraction in `[0, 1)`. The CLI accepts a percentage in `[0, 100)` and converts it before invoking the compute library. KDSE-16 follows the same call sequence with the `kdse16_*` API.
 
+## Python reference and Mermaid adapter
+
+The Python implementation mirrors the C reference behavior for payload
+extraction, validation status and precedence, decoded profiles, Ordered
+canonicalization, ignored container bits, and trusted computation. Its test
+suite can compile the C sources and compare validation across every physical
+KDSE-8 and KDSE-16 container, then compare profiles, canonicalization, and
+compute results throughout the valid payload spaces.
+
+The Mermaid adapter is a separate structural layer. It preserves upper/lower
+orientation and arbitrary BFS-ordered string values; it does not canonicalize
+valid non-Ordered KDSE. Generated Mermaid uses deterministic BFS node IDs,
+`flowchart LR`, and rounded nodes.
+
 ## Repository map
 
 - `include/kdse/` — public headers and complete function contracts.
@@ -98,6 +142,8 @@ The C API expresses branch loss as a fraction in `[0, 1)`. The CLI accepts a per
 - `cli/` — `kdse` for KDSE-8 and `kdse16` for KDSE-16.
 - `examples/` — minimal compute and canonicalization programs for both widths.
 - `tests/` — exhaustive validation, canonicalization, compute, and CLI tests.
+- `kdse-python/` — Python reference package, Mermaid adapter, CLIs, exhaustive
+  tests, and direct C-parity validation.
 - `docs/API.md` — concise public API catalog.
 - `docs/KDSE-8.md` — representation, validity, Ordered form, and operator definition.
 - `docs/KDSE-16.md` — the corresponding 16-bit representation and limits.
@@ -110,7 +156,7 @@ See [INSTALL.md](INSTALL.md) for build and installation details.
 
 | Material | License |
 |----------|---------|
-| C source, headers, build files, tests, examples, CLI, and source-code samples | **AGPL-3.0-or-later** |
+| C and Python source, headers, build and packaging files, tests, examples, CLIs, and source-code samples | **AGPL-3.0-or-later** |
 | Markdown documentation and the supplied papers | **CC BY-SA 4.0** |
 
 Source-code samples embedded in Markdown remain AGPL-3.0-or-later. See [LICENSE.md](LICENSE.md) and the files under `LICENSES/`.

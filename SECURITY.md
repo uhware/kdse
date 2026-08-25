@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Security Policy
 
-**Repository status:** Read-only (v1.0).
+**Repository status:** Read-only (v1.0.3).
 
 ## Reporting a vulnerability
 
@@ -21,8 +21,11 @@ Include a clear description of the issue, steps to reproduce where possible, and
 
 | Version | Supported |
 |---------|-----------|
-| 1.0     | Yes (security reports accepted) |
+| 1.0.x   | Yes (security reports accepted) |
 
 ## Scope
 
-This project is a compact structural encoding library and reference implementation. Please focus reports on memory safety, validation bypasses, or other issues that could affect users who embed the library.
+This project provides C and Python reference implementations of a compact
+structural encoding. Please focus reports on memory safety, validation
+bypasses, parser inconsistencies, unsafe handling of untrusted values, or
+other issues that could affect users who embed either implementation.

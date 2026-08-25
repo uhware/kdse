@@ -4,13 +4,8 @@
 version = 1
 
 [[annotations]]
-path = ["docs/papers/*.pdf"]
+path = ["LICENSES/*"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Copyright (C) 2026 Mark Karaman"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
-[[annotations]]
-path = ["LICENSES/*", "kdse-python/LICENSES/*"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "Copyright (C) 2026 Mark Karaman"
-SPDX-License-Identifier = "CC-BY-SA-4.0"

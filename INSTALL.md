@@ -6,9 +6,9 @@ Command and source-code samples: AGPL-3.0-or-later
 
 # Building and installing KDSE
 
-**Repository status:** Read-only (v1.0). This document remains the build reference for the frozen 1.0 release.
+**Repository status:** Read-only (v1.0.3).
 
-## Requirements
+## C requirements
 
 - An ISO C11 compiler.
 - A POSIX-style `make` and shell.
@@ -16,7 +16,7 @@ Command and source-code samples: AGPL-3.0-or-later
 
 No third-party runtime libraries are required.
 
-## Build and test
+## Build and test C
 
 ```sh
 make
@@ -60,3 +60,32 @@ make DESTDIR="$PWD/stage" PREFIX=/usr install
 
 This installs the public headers, all four static libraries, and the `kdse`
 and `kdse16` command-line programs.
+
+## Install and test Python
+
+The Python reference implementation requires Python 3.10 or later and has no
+third-party runtime dependencies.
+
+From the repository root:
+
+```sh
+python -m pip install ./kdse-python
+KDSE_C_REFERENCE_ROOT=. \
+  python -m unittest discover -s kdse-python/tests -v
+```
+
+The environment variable enables direct parity tests against the C source in
+this repository. Without it, the Python-only suite runs and the C-parity class
+skips cleanly.
+
+The installed commands are:
+
+- `kdse-py` — KDSE-8 validation, profiles, canonicalization, and compute.
+- `kdse16-py` — the corresponding KDSE-16 command.
+
+For editable development from `kdse-python/`:
+
+```sh
+python -m pip install -e .
+KDSE_C_REFERENCE_ROOT=.. python -m unittest discover -s tests -v
+```

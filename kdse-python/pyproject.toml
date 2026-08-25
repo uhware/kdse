@@ -1,0 +1,41 @@
+# Copyright (C) 2026 Mark Karaman
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kdse-reference"
+version = "1.0.3"
+description = "Python reference implementation and Mermaid adapter for K — Dendritic Structural Encoding"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "AGPL-3.0-or-later"}
+authors = [{name = "Mark Karaman / Uhware"}]
+keywords = ["kdse", "tree-encoding", "binary-tree", "mermaid"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://kdse.uhware.com/"
+Repository = "https://github.com/uhware/kdse"
+
+[project.scripts]
+kdse-py = "kdse.cli:main8"
+kdse16-py = "kdse.cli:main16"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["kdse_mermaid"]
+license-files = ["LICENSES/*"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kdse = ["py.typed"]

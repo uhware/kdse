@@ -5,9 +5,22 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Changelog
 
+## [1.0.3] — 2026-08-24
+
+- Added the Python reference implementation of the KDSE-8 and KDSE-16
+  contracts: validation, terminal-depth profiles, Ordered canonicalization,
+  trusted compute paths, shared status codes, and width-specific CLIs.
+- Added the bidirectional Mermaid `flowchart LR` structural adapter with BFS
+  value ordering, preserved upper/lower orientation, deterministic output, and
+  strict full-binary-tree validation.
+- Added exhaustive Python-space tests and direct compiled-C parity tests for
+  validation status, profiles, canonicalization, and compute results.
+- Added Python packaging, compatibility import `kdse_mermaid`, validation
+  records, installation guidance, and CI coverage for Python 3.10 and 3.12.
+
 ## [1.0.2] - 2026-08-22
 
-Documentation-ony alignment with project state.
+Documentation-only alignment with project state.
 
 ## [1.0.1] — 2026-08-19
 
